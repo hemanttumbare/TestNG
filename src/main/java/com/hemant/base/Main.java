@@ -46,7 +46,7 @@ public class Main {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions op = new ChromeOptions();
 			op.addArguments("--headless");
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(op);
 		} else if (browser.equals("Firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();

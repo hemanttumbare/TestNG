@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
@@ -43,6 +44,8 @@ public class Main {
 	public void beforeTest(String browser) {
 		if (browser.equals("Chrome")) {
 			WebDriverManager.chromedriver().setup();
+			ChromeOptions op = new ChromeOptions();
+			op.addArguments("--headless");
 			driver = new ChromeDriver();
 		} else if (browser.equals("Firefox")) {
 			WebDriverManager.firefoxdriver().setup();
